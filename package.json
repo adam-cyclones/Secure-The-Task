@@ -1,0 +1,22 @@
+{
+  "name": "secure-the-task",
+  "version": "1.0.0",
+  "description": "👋 Hi, welcome, and thanks for coming along!",
+  "main": "index.ts",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adam-cyclones/Secure-The-Task.git"
+  },
+  "author": "Adam Crockett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adam-cyclones/Secure-The-Task/issues"
+  },
+  "homepage": "https://github.com/adam-cyclones/Secure-The-Task#readme"
+}
