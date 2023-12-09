@@ -1,12 +1,12 @@
 openapi: 3.0.0
 info:
-  title: SecureTaskList API
-  description: API for SecureTaskList, a full-stack task management application.
+  title: SecureTheTask API
+  description: API for SecureTheTask, a full-stack task management application.
   version: 1.0.0
 
 servers:
-  - url: http://localhost:3000/api
-    description: Development server
+  - url: https://securetasklist.local:3000/api
+    description: Secure development server
 
 paths:
   /tasks:
