@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "test": "npm test -w",
+    "gen-postman-collection": "openapi-generator-cli generate -i $npm_package_config_openapiConfigFile -g postman-collection -o app/tools/postman",
   },
   "repository": {
     "type": "git",
