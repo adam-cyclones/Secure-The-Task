@@ -1,6 +1,5 @@
 {
   "name": "secure-the-task",
-  "version": "1.0.0",
   "description": "👋 Hi, welcome, and thanks for coming along!",
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.2"
