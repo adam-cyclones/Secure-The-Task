@@ -2,9 +2,11 @@
   "name": "secure-the-task",
   "version": "1.0.0",
   "description": "👋 Hi, welcome, and thanks for coming along!",
-  "main": "index.ts",
-  "directories": {
-    "doc": "docs"
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.5.2"
+  },
+  "config": {
+    "openapiConfigFile": "./openapi.yaml"
   },
   "workspaces": [
     "app/ui",
