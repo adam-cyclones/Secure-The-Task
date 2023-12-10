@@ -11,13 +11,13 @@
   },
   "workspaces": [
     "app/ui",
-    "app/server",
+    "app/api-server",
     "app/mock-server"
   ],
   "scripts": {
     "test": "npm test -w",
     "gen-postman-collection": "openapi-generator-cli generate -i $npm_package_config_openapiConfigFile -g postman-collection -o app/tools/postman",
-    "gen-api-layer": "openapi-generator-cli generate -i $npm_package_config_openapiConfigFile -g typescript-node -o app/server/src/generated"
+    "gen-api-layer": "openapi-generator-cli generate -i $npm_package_config_openapiConfigFile -g typescript-node -o app/api-server/src/generated"
   },
   "repository": {
     "type": "git",
