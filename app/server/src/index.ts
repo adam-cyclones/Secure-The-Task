@@ -5,6 +5,7 @@ import { resolve } from "path";
 import configuration from "./configuration";
 import { ListenOptions } from "net";
 import endpoints from "./routes";
+import helmet from "helmet";
 
 // TODO: define and conenct up routes to API Layer - I need to change the API layer to point to AWS 
 // import { DefaultApi } from "./generated/api"
@@ -15,6 +16,7 @@ const { DEFAULT_CERTS_BASENAME, DEFAULT_HOSTNAME, DEFAULT_PORT } =
 configuration;
 
 const app = express();
+
 
 // ensure PORT env var override is a number at all times 
 const port: number = parseInt(process.env.PORT || "") || DEFAULT_PORT;
@@ -34,6 +36,7 @@ const cert = await readFile(resolve(pathToCerts, "securetasklist.local.pem"), "u
 const credentials = { key, cert };
 
 app.use(endpoints);
+app.use(helmet());
 
 const httpsServer = https.createServer(credentials, app);
 

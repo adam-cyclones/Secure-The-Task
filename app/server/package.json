@@ -4,7 +4,8 @@
   "description": "OpenAPI complient API server aiming to achieve security best practices and keep you productive too!",
   "main": "src/index.ts",
   "dependencies": {
-    "express": "4.18.2"
+    "express": "4.18.2",
+    "helmet": "7.1.0"
   },
   "devDependencies": {
     "typescript": "5.3.3",
