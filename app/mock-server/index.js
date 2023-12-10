@@ -11,18 +11,18 @@ const { DEFAULT_CERTS_BASENAME, DEFAULT_HOSTNAME, DEFAULT_PORT } =
 const server = new CustomHttpsServer({
     hostname: DEFAULT_HOSTNAME,
     port: DEFAULT_PORT,
-    sslKeyPath: resolve(__dirname, '../../', DEFAULT_CERTS_BASENAME, 'securetasklist.local-key.pem'),
-    sslCertPath: resolve(__dirname, '../../', DEFAULT_CERTS_BASENAME, 'securetasklist.local.pem')
+    sslKeyPath: resolve("../../", DEFAULT_CERTS_BASENAME, 'securetasklist.local-key.pem'),
+    sslCertPath: resolve("../../", DEFAULT_CERTS_BASENAME, 'securetasklist.local.pem')
 });
 
 ;(async () => {
 
   const mocker = new OpenApiMocker({
     server,
-    schema: resolve(__dirname, '../../openapi.yaml')
+    schema: resolve('../../openapi.yaml')
   });
 
   await mocker.validate();
   await mocker.mock();
-  
+
 })();

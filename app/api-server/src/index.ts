@@ -26,7 +26,7 @@ if (!host) {
   throw new Error("Provided HOSTNAME is not a valid string");
 }
 
-const pathToCerts = resolve(__dirname, "../../../", DEFAULT_CERTS_BASENAME);
+const pathToCerts = resolve("../../../", DEFAULT_CERTS_BASENAME);
 
 // Read the TLS certificate and private key
 const key = await readFile(
