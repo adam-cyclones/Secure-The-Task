@@ -32,11 +32,11 @@ Secure the task is a monorepo with [workspaces](https://docs.npmjs.com/cli/v7/us
 By the end of this installation you should be able to start a secure express.js server, you can also run tests and generate parts of the project.
 
 ### Clone from repo
-> In a Terminal cd to your desired location it is assumed that you already know how to clone the repo and have `cd $PATH_TO_PROJECT_ROOT`.
+> In a Terminal cd to your desired location it is assumed that you already know how to clone the repo and have `cd $PATH_TO_PROJECT_ROOT``.
 
 
 ### Install Node Dependencies
-> run `npm install` at the root of this project.
+run `npm install` at the root of the project.
 
 Secure the task is a monorepo with [workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces), Observe how the dependencies of the app packages in `app` directory are now installed at the root of the project.
 
