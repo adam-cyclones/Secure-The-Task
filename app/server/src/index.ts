@@ -4,6 +4,7 @@ import https from "https";
 import { resolve } from "path";
 import configuration from "./configuration";
 import { ListenOptions } from "net";
+import endpoints from "./routes";
 
 // TODO: define and conenct up routes to API Layer - I need to change the API layer to point to AWS 
 // import { DefaultApi } from "./generated/api"
@@ -32,10 +33,7 @@ const cert = await readFile(resolve(pathToCerts, "securetasklist.local.pem"), "u
 
 const credentials = { key, cert };
 
-// TODO: impliment the routes for API
-app.all("/", (req, res) => {
-  res.redirect("/api");
-});
+app.use(endpoints);
 
 const httpsServer = https.createServer(credentials, app);
 
