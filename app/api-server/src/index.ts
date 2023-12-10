@@ -40,6 +40,7 @@ const cert = await readFile(
 
 const credentials = { key, cert };
 
+// Routes and middleware
 app.get("/", (req, res) => {
     res.redirect('/api');
 });
