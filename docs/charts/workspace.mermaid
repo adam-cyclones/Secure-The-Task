@@ -1,0 +1,11 @@
+graph TD
+    A[app] --> B[mock-server]
+    A --> C[server]
+    A --> D[tools]
+    A --> E[ui]
+
+    B --> B1[Simulates API responses for backend development]
+    C --> C1[Integrates with AWS API Gateway and MongoDB]
+    C --> C2[Utilizes Redis for caching]
+    D --> D1[Contains Postman collection for API testing]
+    E --> E1[React-based frontend application]

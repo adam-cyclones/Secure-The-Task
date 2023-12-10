@@ -3,6 +3,7 @@
   "description": "👋 Hi, welcome, and thanks for coming along!",
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.2",
+    "newman": "^6.0.0",
     "prettier": "3.1.0"
   },
   "config": {

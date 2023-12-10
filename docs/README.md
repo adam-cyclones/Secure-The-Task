@@ -9,3 +9,7 @@
 To maintain a single source of truth, please visit Notion:
 
 **[Read the API Docs](https://perfect-rhodium-442.notion.site/API-Design-dc3b9f79e37f43688783c9ba0322502b)**
+
+
+### Please return to the root README
+This readme is an abridged verion of the root repo README

@@ -309,7 +309,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:3000/api",
+			"value": "https://securetasklist.local:3000/api",
 			"type": "string"
         }
 	]
