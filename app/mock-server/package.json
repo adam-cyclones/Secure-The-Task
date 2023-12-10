@@ -1,0 +1,13 @@
+{
+  "name": "secure-the-task-mock-api-server",
+  "version": "1.0.0",
+  "description": "test or work on the frontend, in case I have no backend in time",
+  "dependencies": {
+    "open-api-mocker": "2.0.0"
+  },
+  "scripts": {
+    "start": "open-api-mocker -s ../../openapi.yaml"
+  },
+  "author": "Adam Crockett",
+  "license": "ISC"
+}

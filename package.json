@@ -11,7 +11,8 @@
   },
   "workspaces": [
     "app/ui",
-    "app/server"
+    "app/server",
+    "app/mock-server"
   ],
   "scripts": {
     "test": "npm test -w",
