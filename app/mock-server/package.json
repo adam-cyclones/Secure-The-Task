@@ -7,7 +7,6 @@
     "json-schema-faker": "0.5.4"
   },
   "scripts": {
-    "start-default": "open-api-mocker -s ../../openapi.yaml",
     "start": "node --watch index.js"
   },
   "author": "Adam Crockett",
