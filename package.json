@@ -3,6 +3,7 @@
   "description": "👋 Hi, welcome, and thanks for coming along!",
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.2",
+    "openapi-typescript": "6.7.2",
     "newman": "^6.0.0",
     "prettier": "3.1.0"
   },
@@ -12,12 +13,14 @@
   "workspaces": [
     "app/ui",
     "app/api-server",
+    "app/ui-server",
     "app/mock-server"
   ],
   "scripts": {
-    "test": "npm test -w",
+    "dev": "npm run dev --workspace=secure-the-task-ui-server --workspace=secure-the-task-api-server",
+    "test": "npm test --workspace=secure-the-task-ui-server --workspace=secure-the-task-api-server",
     "gen-postman-collection": "openapi-generator-cli generate -i $npm_package_config_openapiConfigFile -g postman-collection -o app/tools/postman",
-    "gen-api-layer": "openapi-generator-cli generate -i $npm_package_config_openapiConfigFile -g typescript-fetch -o app/ui-server/src/generated"
+    "gen-api-types": "npx openapi-typescript $npm_package_config_openapiConfigFile -o app/api-schema/schema.d.ts"
   },
   "repository": {
     "type": "git",
