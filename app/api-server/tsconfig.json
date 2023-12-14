@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "outDir": "./dist",
+    "outDir": "./build",
     "rootDir": "./src",
     "baseUrl": ".",
     "experimentalDecorators": true,

@@ -17,6 +17,7 @@
     "dev": "concurrently \"tsc -p ./ --watch\" \"node ./build --watch\"",
     "test": "node ./test/postman.test"
   },
+  "type": "module",
   "author": "Adam Crockett",
   "license": "ISC"
 }
