@@ -1,0 +1,29 @@
+:root {
+    --bs-blue: #0f62fe;
+}
+
+.App {
+    height: 100vh;
+}
+
+.form-control[type='search'] {
+    border-radius: 9e9em;
+}
+
+.form-control,
+.card,
+.btn {
+    text-align: left;
+    border-radius: 0;
+}
+
+.font-weight-extra-bold {
+    font-weight: 700;
+}
+
+
+@supports (height: 100dvh) {
+    .App {
+        height: 100dhv;
+    }
+}
