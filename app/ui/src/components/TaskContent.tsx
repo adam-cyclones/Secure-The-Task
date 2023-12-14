@@ -1,6 +1,6 @@
-import { Button, Card, ListGroup, Stack } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
 import type { Task } from "../types/App.types";
-import { useUiText } from "../hooks/uiText";
+import TaskCardItem from "./TaskCardItem";
 
 interface TaskContentProps {
   /**
@@ -10,31 +10,12 @@ interface TaskContentProps {
 }
 
 function TaskContent({ tasks }: TaskContentProps) {
-  const uiText = useUiText();
   return (
     <>
       <main>
         <ListGroup variant="flush">
           {tasks.map((task) => (
-            <ListGroup.Item style={{ border: 0 }}>
-              <Card>
-                <Card.Header className="d-flex justify-content-between">
-                  <p className="m-0">{task.title}</p>
-                  <Stack
-                    className="ml-auto justify-content-between"
-                    direction="horizontal"
-                  >
-                    <Button variant="outline-secondary" size="sm">
-                      {uiText.editBtnText}
-                    </Button>
-                    <Button variant="outline-danger" size="sm">
-                      {uiText.deleteBtnText}
-                    </Button>
-                  </Stack>
-                </Card.Header>
-                <Card.Body>{task.description}</Card.Body>
-              </Card>
-            </ListGroup.Item>
+            <TaskCardItem key={task.id} task={task} />
           ))}
         </ListGroup>
       </main>
