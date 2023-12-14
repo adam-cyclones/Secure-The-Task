@@ -1,0 +1,24 @@
+{
+  "name": "secure-the-task-ui-server",
+  "version": "1.0.0",
+  "description": "Hosts the react app and forwards requests to api-server",
+  "main": "src/index",
+  "dependencies": {
+    "express": "4.18.2",
+    "helmet": "7.1.0",
+    "openapi-fetch": "0.8.2"
+  },
+  "devDependencies": {
+    "typescript": "5.3.3",
+    "@types/node": "20.10.4",
+    "@types/express": "4.17.21",
+    "concurrently": "8.2.2"
+  },
+  "scripts": {
+    "build": "DEVELOPMENT=true tsc -p ./",
+    "dev": "DEVELOPMENT=true tsc -p ./ --watch & node build --inspect --watch"
+  },
+  "type": "module",
+  "author": "Adam Crockett",
+  "license": "ISC"
+}
