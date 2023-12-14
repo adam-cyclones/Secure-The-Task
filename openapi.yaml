@@ -126,6 +126,7 @@ components:
     Task:
       type: object
       required:
+        - id
         - title
         - status
       properties:
