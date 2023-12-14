@@ -22,11 +22,20 @@ paths:
           in: query
           schema:
             type: string
+            enum:
+              - "0"
+              - "1"
+              - "2"
+              - "3"
           description: Filter by status
         - name: priority
           in: query
           schema:
             type: string
+            enum:
+              - "0"
+              - "1"
+              - "2"
           description: Filter by priority
         - name: page
           in: query
@@ -39,14 +48,14 @@ paths:
             type: integer
           description: Number of items per page
       responses:
-        '200':
+        "200":
           description: A list of tasks
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Task'
+                  $ref: "#/components/schemas/Task"
     post:
       summary: Create a new task
       requestBody:
@@ -54,9 +63,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Task'
+              $ref: "#/components/schemas/Task"
       responses:
-        '201':
+        "201":
           description: Task created
 
   /tasks/{taskId}:
@@ -69,12 +78,12 @@ paths:
     get:
       summary: Retrieve a task by its ID
       responses:
-        '200':
+        "200":
           description: Details of a task
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Task'
+                $ref: "#/components/schemas/Task"
     put:
       summary: Update an existing task
       requestBody:
@@ -82,14 +91,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Task'
+              $ref: "#/components/schemas/Task"
       responses:
-        '200':
+        "200":
           description: Task updated
     delete:
       summary: Delete a task
       responses:
-        '204':
+        "204":
           description: Task deleted
 
   /authenticate:
@@ -100,9 +109,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserCredentials'
+              $ref: "#/components/schemas/UserCredentials"
       responses:
-        '200':
+        "200":
           description: Authentication successful
           content:
             application/json:

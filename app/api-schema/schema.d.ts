@@ -13,9 +13,9 @@ export interface paths {
           /** @description Search query */
           search?: string;
           /** @description Filter by status */
-          status?: string;
+          status?: "0" | "1" | "2" | "3";
           /** @description Filter by priority */
-          priority?: string;
+          priority?: "0" | "1" | "2";
           /** @description Page number for pagination */
           page?: number;
           /** @description Number of items per page */

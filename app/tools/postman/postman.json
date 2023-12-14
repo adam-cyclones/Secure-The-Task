@@ -1,8 +1,8 @@
 {
 	"info": {
-		"name": "SecureTaskList API",
+		"name": "SecureTheTask API",
 		"description": {
-		    "content": "API for SecureTaskList, a full-stack task management application.",
+		    "content": "API for SecureTheTask, a full-stack task management application.",
 		    "type": "text/markdown"
 		},
 		"version": "1.0.0",
