@@ -1,8 +1,13 @@
-import { Button, Container, Form, Navbar } from "react-bootstrap";
+import { Container, Form, Navbar } from "react-bootstrap";
 import { useUiText } from "../hooks/uiText";
 
-function TaskSearchbar() {
+interface TaskSearchbarProps {
+  searchFn: (term: string) => void;
+}
+
+function TaskSearchbar({ searchFn }: TaskSearchbarProps) {
   const uiText = useUiText();
+
   return (
     <Navbar className="search-bar pt-0 pb-0 mb-4">
       <Container>
@@ -10,11 +15,10 @@ function TaskSearchbar() {
           <Form.Control
             size="lg"
             type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
+            placeholder={uiText.searchText}
+            aria-label={uiText.searchText}
+            onChange={(e) => searchFn((e.target as HTMLInputElement).value)}
           />
-          <Button variant="link">{uiText.searchText}</Button>
         </Form>
       </Container>
     </Navbar>
