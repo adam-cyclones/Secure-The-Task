@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "dev": "npm run dev --workspace=secure-the-task-ui-server --workspace=secure-the-task-api-server",
+    "test-ui": "npm test --workspace=secure-the-task-ui",
     "test": "npm test --workspace=secure-the-task-ui-server --workspace=secure-the-task-api-server",
     "gen-postman-collection": "openapi-generator-cli generate -i $npm_package_config_openapiConfigFile -g postman-collection -o app/tools/postman",
     "gen-api-types": "npx openapi-typescript $npm_package_config_openapiConfigFile -o app/api-schema/schema.d.ts"

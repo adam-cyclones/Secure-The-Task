@@ -11,4 +11,9 @@ export interface UIText {
   searchText: string;
   editBtnText: string;
   deleteBtnText: string;
+  saveBtnText: string;
+  taskPriorityControlLabel: string;
+  taskPriorityLevel0: string;
+  taskPriorityLevel1: string;
+  taskPriorityLevel2: string;
 }

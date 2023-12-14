@@ -10,4 +10,9 @@ export const en: UIText = {
   searchText: "search",
   deleteBtnText: "delete",
   editBtnText: "edit",
+  saveBtnText: "save",
+  taskPriorityControlLabel: "Priority",
+  taskPriorityLevel0: "Low",
+  taskPriorityLevel1: "Medium",
+  taskPriorityLevel2: "High",
 };

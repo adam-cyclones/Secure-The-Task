@@ -21,6 +21,10 @@
     font-weight: 700;
 }
 
+.readonly-disguise {
+    outline: none;
+    cursor: default;
+}
 
 @supports (height: 100dvh) {
     .App {

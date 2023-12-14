@@ -138,7 +138,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"id\": \"<string>\",\n \"title\": \"<string>\",\n \"description\": \"<string>\",\n \"status\": \"<string>\",\n \"priority\": \"<number>\",\n \"dueDate\": \"<string>\"\n}",
+                                        "raw": "{\n \"id\": \"<string>\",\n \"title\": \"<string>\",\n \"description\": \"<string>\",\n \"status\": \"<string>\",\n \"priority\": \"<string>\",\n \"dueDate\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -271,7 +271,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"id\": \"<string>\",\n \"title\": \"<string>\",\n \"description\": \"<string>\",\n \"status\": \"<string>\",\n \"priority\": \"<number>\",\n \"dueDate\": \"<string>\"\n}",
+                                        "raw": "{\n \"id\": \"<string>\",\n \"title\": \"<string>\",\n \"description\": \"<string>\",\n \"status\": \"<string>\",\n \"priority\": \"<string>\",\n \"dueDate\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

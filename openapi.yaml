@@ -23,19 +23,19 @@ paths:
           schema:
             type: string
             enum:
-              - "0"
-              - "1"
-              - "2"
-              - "3"
+              - "_0"
+              - "_1"
+              - "_2"
+              - "_3"
           description: Filter by status
         - name: priority
           in: query
           schema:
             type: string
             enum:
-              - "0"
-              - "1"
-              - "2"
+              - "_0"
+              - "_1"
+              - "_2"
           description: Filter by priority
         - name: page
           in: query
@@ -140,7 +140,7 @@ components:
         status:
           type: string
         priority:
-          type: integer
+          type: string
         dueDate:
           type: string
           format: date-time

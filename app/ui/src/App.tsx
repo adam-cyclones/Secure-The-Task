@@ -17,7 +17,7 @@ const tasks: Task[] = [
     description: "do a thing",
     dueDate: "2 days",
     id: "1234",
-    priority: 1,
+      priority: "_1",
   },
   {
     title: "hello world",
@@ -25,7 +25,7 @@ const tasks: Task[] = [
     description: "do a thing",
     dueDate: "2 days",
     id: "1234",
-    priority: 1,
+      priority: "_2",
   },
   {
     title: "hello world",
@@ -33,7 +33,7 @@ const tasks: Task[] = [
     description: "do a thing",
     dueDate: "2 days",
     id: "1234",
-    priority: 1,
+      priority: "_3",
   },
 ];
 function App() {

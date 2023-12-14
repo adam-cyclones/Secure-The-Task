@@ -13,9 +13,9 @@ export interface paths {
           /** @description Search query */
           search?: string;
           /** @description Filter by status */
-          status?: "0" | "1" | "2" | "3";
+          status?: "_0" | "_1" | "_2" | "_3";
           /** @description Filter by priority */
-          priority?: "0" | "1" | "2";
+          priority?: "_0" | "_1" | "_2";
           /** @description Page number for pagination */
           page?: number;
           /** @description Number of items per page */
@@ -130,11 +130,11 @@ export interface components {
   schemas: {
     Task: {
       /** Format: uuid */
-      id?: string;
+      id: string;
       title: string;
       description?: string;
       status: string;
-      priority?: number;
+      priority?: string;
       /** Format: date-time */
       dueDate?: string;
     };
