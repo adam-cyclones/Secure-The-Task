@@ -12,7 +12,7 @@ function TaskFooter({ extraClassNames }: TaskFooterProps) {
   const uiText = useUiText();
   const className = `gap-2 mt-4 ${extraClassNames}`;
   return (
-    <footer className="d-grid">
+    <footer className="d-grid pl-4 pr-4">
       <Button className={className} size="lg" variant="primary">
         {uiText.addItem}
       </Button>
