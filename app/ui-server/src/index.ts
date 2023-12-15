@@ -9,23 +9,20 @@ import { ListenOptions } from "net";
 import routes from "./routes.js";
 import helmet from "helmet";
 
-const prodAPIUrl = 'https://securetasklist.local:3000/api';
-const mockAPIURL = 'https://securetasklist.local:5000/api';
+const prodAPIUrl = "https://securetasklist.local:3000/api";
+const mockAPIURL = "https://securetasklist.local:5000/api";
 const baseUrl = process.env.DEVELOPMENT ? mockAPIURL : prodAPIUrl;
 
-const client = createClient<paths>({ 
-  baseUrl
+const client = createClient<paths>({
+  baseUrl,
 });
-
-
 
 const { DEFAULT_CERTS_BASENAME, DEFAULT_HOSTNAME, DEFAULT_PORT } =
   configuration;
 
 const app = express();
 
-
-app.use('/', express.static(resolve('../ui/build')));
+app.use("/", express.static(resolve("../ui/build")));
 app.use(routes);
 app.use(helmet());
 
@@ -51,7 +48,6 @@ const cert = await readFile(
 );
 
 const credentials = { key, cert };
-
 
 const httpsServer = https.createServer(credentials, app);
 

@@ -3,7 +3,6 @@
  * Do not make direct changes to the file.
  */
 
-
 export interface paths {
   "/tasks": {
     /** Retrieve a list of tasks */

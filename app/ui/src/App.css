@@ -1,33 +1,33 @@
 :root {
-    --bs-blue: #0f62fe;
+  --bs-blue: #0f62fe;
 }
 
 .App {
-    height: 100vh;
+  height: 100vh;
 }
 
-.form-control[type='search'] {
-    border-radius: 9e9em;
+.form-control[type="search"] {
+  border-radius: 9e9em;
 }
 
 .form-control,
 .card,
 .btn {
-    text-align: left;
-    border-radius: 0;
+  text-align: left;
+  border-radius: 0;
 }
 
 .font-weight-extra-bold {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .readonly-disguise {
-    outline: none;
-    cursor: default;
+  outline: none;
+  cursor: default;
 }
 
 @supports (height: 100dvh) {
-    .App {
-        height: 100dhv;
-    }
+  .App {
+    height: 100dhv;
+  }
 }
