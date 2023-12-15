@@ -2,9 +2,9 @@ import express from "express";
 import { readFile } from "fs/promises";
 import https from "https";
 import { resolve } from "path";
-import configuration from "./configuration";
+import configuration from "./configuration.js";
 import { ListenOptions } from "net";
-import v1 from "./v1API";
+import v1 from "./v1API.js";
 import helmet from "helmet";
 
 // TODO: define and conenct up routes to API Layer - I need to change the API layer to point to AWS
@@ -26,7 +26,7 @@ if (!host) {
   throw new Error("Provided HOSTNAME is not a valid string");
 }
 
-const pathToCerts = resolve("../../../", DEFAULT_CERTS_BASENAME);
+const pathToCerts = resolve("../../", DEFAULT_CERTS_BASENAME);
 
 // Read the TLS certificate and private key
 const key = await readFile(
@@ -42,7 +42,7 @@ const credentials = { key, cert };
 
 // Routes and middleware
 app.get("/", (req, res) => {
-    res.redirect('/api');
+  res.redirect("/api");
 });
 app.get("/api", (req, res) => {
   res.json({

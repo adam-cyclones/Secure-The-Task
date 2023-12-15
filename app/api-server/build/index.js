@@ -2,10 +2,13 @@ import express from "express";
 import { readFile } from "fs/promises";
 import https from "https";
 import { resolve } from "path";
-import configuration from "./configuration";
-import v1 from "./v1API";
+import configuration from "./configuration.js";
+import v1 from "./v1API.js";
 import helmet from "helmet";
-
+// TODO: define and conenct up routes to API Layer - I need to change the API layer to point to AWS
+// import { DefaultApi } from "./generated/api"
+// const apiLayer = new DefaultApi();
+// AND THEN TODO: use newman to run postman tests in node.
 const { DEFAULT_CERTS_BASENAME, DEFAULT_HOSTNAME, DEFAULT_PORT } = configuration;
 const app = express();
 // ensure PORT env var override is a number at all times
@@ -15,14 +18,14 @@ const host = process.env.HOSTNAME || DEFAULT_HOSTNAME;
 if (!host) {
     throw new Error("Provided HOSTNAME is not a valid string");
 }
-const pathToCerts = resolve("../../../", DEFAULT_CERTS_BASENAME);
+const pathToCerts = resolve("../../", DEFAULT_CERTS_BASENAME);
 // Read the TLS certificate and private key
 const key = await readFile(resolve(pathToCerts, "securetasklist.local-key.pem"), "utf8");
 const cert = await readFile(resolve(pathToCerts, "securetasklist.local.pem"), "utf8");
 const credentials = { key, cert };
 // Routes and middleware
 app.get("/", (req, res) => {
-    res.redirect('/api');
+    res.redirect("/api");
 });
 app.get("/api", (req, res) => {
     res.json({
