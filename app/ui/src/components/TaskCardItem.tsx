@@ -11,6 +11,8 @@ function TaskCardItem({ task }: TaskCardItemProps) {
   const [isEditing, setIsEditing] = useState(false);
   const uiText = useUiText();
   const taskBodyRef = useRef<HTMLTextAreaElement>(null);
+  const cardFormRef = useRef<HTMLFormElement>(null);
+  const [notYetPersistedTask, setTask] = useState(task);
 
   const focusSelectTaskbody = () => {
     if (taskBodyRef && taskBodyRef.current) {
@@ -26,12 +28,31 @@ function TaskCardItem({ task }: TaskCardItemProps) {
     }
   };
 
+  /**
+   * Savees a cards title, description, priority,
+   * Note: due-date not impl at this time due to potential UI complexity
+   */
+  const handleSave = () => {
+    if (cardFormRef.current) {
+      const formData = new FormData(cardFormRef.current);
+      const updatedTask = {
+        ...notYetPersistedTask,
+        title: formData.get("title") as string,
+        description: formData.get("description") as string,
+        priority: formData.get("priority") as string,
+      };
+      setTask(updatedTask);
+    }
+    toggleEditMode();
+  };
+
   return (
     <ListGroup.Item style={{ border: 0 }}>
-      <Form>
+      <Form ref={cardFormRef}>
         <Card>
           <Card.Header className="d-flex justify-content-between">
             <Form.Control
+              name="title"
               type="text"
               readOnly={!isEditing}
               defaultValue={task.title}
@@ -61,24 +82,31 @@ function TaskCardItem({ task }: TaskCardItemProps) {
           </Card.Header>
           <Card.Body>
             <Form.Control
+              name="description"
               defaultValue={task.description}
               ref={taskBodyRef}
               as="textarea"
+              aria-label={uiText.cardBodyA11yLabel}
               rows={3}
               readOnly={!isEditing}
               className={!isEditing ? "readonly-disguise" : ""}
-            ></Form.Control>
+            />
           </Card.Body>
           {isEditing && (
             <Card.Footer>
-              <Form>
-                <Form.Select aria-label="Default select example">
-                  <option>{uiText.taskPriorityControlLabel}</option>
-                  <option value="_0">{uiText.taskPriorityLevel0}</option>
-                  <option value="_1">{uiText.taskPriorityLevel1}</option>
-                  <option value="_2">{uiText.taskPriorityLevel2}</option>
-                </Form.Select>
-              </Form>
+              <Form.Label htmlFor="priority">
+                {uiText.taskPriorityControlLabel}
+              </Form.Label>
+              <Form.Select
+                id="priority"
+                name="priority"
+                aria-label={uiText.taskPriorityControlLabel}
+                defaultValue={task.priority}
+              >
+                <option value="_0">{uiText.taskPriorityLevel0}</option>
+                <option value="_1">{uiText.taskPriorityLevel1}</option>
+                <option value="_2">{uiText.taskPriorityLevel2}</option>
+              </Form.Select>
             </Card.Footer>
           )}
         </Card>
