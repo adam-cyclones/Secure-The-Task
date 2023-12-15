@@ -1,0 +1,15 @@
+graph TD
+    subgraph Development
+        DevServer[CRA Development Server]
+        MockServer[Mock Server]
+        DevServer -- "API Calls" --> MockServer
+    end
+
+    subgraph Production
+        UIServer[UI Server Serves Build]
+        APIServer[API Server]
+        UIServer -- "API Calls" --> APIServer
+    end
+
+    NewmanTests[Newman Tests]
+    NewmanTests -- "Validates" --> APIServer

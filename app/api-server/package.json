@@ -14,7 +14,9 @@
     "concurrently": "8.2.2"
   },
   "scripts": {
-    "dev": "concurrently \"tsc -p ./ --watch\" \"node ./build --watch\"",
+    "build": "tsc -p ./",
+    "start": "node ./build",
+    "dev": "TASKS_API_URL='TASKS_API_URL='https://securetasklist.local:5000/api' concurrently \"tsc -p ./ --watch\" \"node ./build --watch\"",
     "test": "node ./test/postman.test"
   },
   "type": "module",

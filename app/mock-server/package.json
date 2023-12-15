@@ -7,7 +7,7 @@
     "json-schema-faker": "0.5.4"
   },
   "scripts": {
-    "start": "node --watch index.js"
+    "dev": "node --watch index.js"
   },
   "author": "Adam Crockett",
   "license": "ISC"
