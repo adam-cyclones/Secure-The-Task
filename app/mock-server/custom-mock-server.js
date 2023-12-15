@@ -14,6 +14,14 @@ class CustomHttpsServer extends EventEmitter {
       cert: fs.readFileSync(options.sslCertPath), // Path to SSL certificate
     };
     this.hostname = options.hostname || "localhost";
+
+    this.app.use( (req, res, next) => {
+        res.setHeader('Access-Control-Allow-Origin', 'https://securetasklist.local:5050');
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, content-type');
+        next();
+    });
+
     this.server = https.createServer(this.httpsOptions, this.app);
   }
 
@@ -24,7 +32,9 @@ class CustomHttpsServer extends EventEmitter {
   }
 
   setPort(port) {
-    this.port = port;
+    // doesnt work as expected
+    // this.port = port
+    // manual overide at listen options bellow
     return this;
   }
 
@@ -65,9 +75,9 @@ class CustomHttpsServer extends EventEmitter {
   async init() {
     const listenOptions = {
       host: this.hostname,
-      port: this.port,
+      port: 3030, // FIXME: manual overide
     };
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {  
       this.server
         .listen(listenOptions, () => {
           const { host, port } = listenOptions;

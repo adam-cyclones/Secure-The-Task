@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Col, Container, Row } from "react-bootstrap";
 import AppNavbar from "./components/AppNavbar";
@@ -11,32 +11,24 @@ import { UserProvider } from "./contexts/userContext";
 import TaskFooter from "./components/TaskFooter";
 
 function App() {
-  const tasks: Task[] = [
-    {
-      title: "Love the world world",
-      status: "todo",
-      description: "do a thing",
-      dueDate: "2 days",
-      id: "1234",
-      priority: "_1",
-    },
-    {
-      title: "Take care of yourself",
-      status: "todo",
-      description: "do a thing",
-      dueDate: "2 days",
-      id: "1235",
-      priority: "_2",
-    },
-    {
-      title: "Feed the dog",
-      status: "todo",
-      description: "do a thing",
-      dueDate: "2 days",
-      id: "1236",
-      priority: "_3",
-    },
-  ];
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  useEffect(() => {
+    if (!process.env.REACT_APP_TASKS_API_URL) {
+      throw new Error(
+        "Missing TASKS_API_URL environment variable, unable to fetch tasks.",
+      );
+    }
+    fetch(`${process.env.REACT_APP_TASKS_API_URL}/api/tasks`)
+      .then((response) => {
+        response.json().then((d) => {
+          setTasks(d);
+        });
+      })
+      .catch((err) => {
+        throw new Error(err);
+      });
+  }, []);
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -54,14 +46,16 @@ function App() {
               <Col xs lg="6">
                 <TaskSearchbar searchFn={handleSearch} />
                 <TaskContent
-                  tasks={tasks.filter((item) => {
-                    const regex = new RegExp(searchTerm, "i");
-                    return (
-                      item.title.includes(searchTerm) ||
-                      regex.test(item.title) ||
-                      (item.description && regex.test(item.description))
-                    );
-                  })}
+                  tasks={
+                    tasks.filter((item) => {
+                      const regex = new RegExp(searchTerm, "i");
+                      return (
+                        item.title.includes(searchTerm) ||
+                        regex.test(item.title) ||
+                        (item.description && regex.test(item.description))
+                      );
+                    }) || []
+                  }
                 />
                 <TaskFooter extraClassNames={"d-none d-md-block"} />
                 <TaskFooter
