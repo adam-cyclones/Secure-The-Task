@@ -17,7 +17,8 @@
     "app/mock-server"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=secure-the-task-ui-server --workspace=secure-the-task-api-server",
+    "prod": "",
+    "dev": "npm run dev --workspace=secure-the-task-mock-api-server --workspace=secure-the-task-ui",
     "test-ui": "npm test --workspace=secure-the-task-ui",
     "test": "npm test --workspace=secure-the-task-ui-server --workspace=secure-the-task-api-server",
     "gen-postman-collection": "openapi-generator-cli generate -i $npm_package_config_openapiConfigFile -g postman-collection -o app/tools/postman",
