@@ -42,11 +42,17 @@ function TaskCardItem({ task }: TaskCardItemProps) {
                 variant="outline-secondary"
                 size="sm"
                 onClick={() => toggleEditMode()}
-                className="text-nowrap"
+                className={`text-nowrap ${isEditing ? "d-none" : ""}`}
               >
-                {isEditing
-                  ? `🔓 ${uiText.saveBtnText}`
-                  : `🔒 ${uiText.editBtnText}`}
+                {`🔒 ${uiText.editBtnText}`}
+              </Button>
+              <Button
+                variant="outline-secondary"
+                size="sm"
+                onClick={handleSave}
+                className={`text-nowrap ${isEditing ? "" : "d-none"}`}
+              >
+                {`🔓 ${uiText.saveBtnText}`}
               </Button>
               <Button variant="outline-danger" size="sm">
                 {uiText.deleteBtnText}
