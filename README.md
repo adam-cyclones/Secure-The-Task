@@ -82,7 +82,7 @@ run `npm install` at the root of the project.
 
 Secure the task is a mono-repo with [workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces), Observe how the dependencies of the app packages in `app` directory are now installed at the root of the project.
 
-### Prep your machine
+### Prep your machine hosts
 
 Please add the following line to your `/etc/hosts` file.
 
@@ -122,3 +122,17 @@ certs
 Congratulations you can now start the secure express api server!
 
 ## Start the Project
+
+### Development
+
+From the root of this project, please open at terminal and run command:
+
+```bash
+npm run dev-start-ui
+```
+
+Open a new tab or terminal and run:
+
+```bash
+npm run dev-start-api
+```

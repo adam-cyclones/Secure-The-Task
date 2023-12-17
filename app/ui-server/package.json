@@ -15,6 +15,7 @@
     "concurrently": "8.2.2"
   },
   "scripts": {
+    "test": "echo There is no time to impliment these tests",
     "build": "DEVELOPMENT=true tsc -p ./",
     "dev": "DEVELOPMENT=true tsc -p ./ --watch & node build --inspect --watch"
   },
