@@ -9,6 +9,7 @@ const { ListenOptions } = require("net");
 const v1 = require("./v1API.js");
 const helmet = require("helmet");
 !(async () => {
+    const { DEFAULT_CERTS_BASENAME, DEFAULT_HOSTNAME, DEFAULT_PORT } = configuration;
     const app = express();
     // Ensure PORT env var override is a number
     const port = parseInt(process.env.PORT || "") || DEFAULT_PORT;
