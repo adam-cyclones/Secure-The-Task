@@ -8,6 +8,7 @@ const configuration = require("./configuration.js");
 const { ListenOptions } = require("net");
 const v1 = require("./v1API.js");
 const helmet = require("helmet");
+!(async () => {
 const app = express();
 // ensure PORT env var override is a number at all times
 const port = parseInt(process.env.PORT || "") || DEFAULT_PORT;
@@ -47,3 +48,4 @@ const listenOptions = {
 httpsServer.listen(listenOptions, () => {
   console.log(`HTTPS Server running: https://${host}:${port}`);
 });
+})();
