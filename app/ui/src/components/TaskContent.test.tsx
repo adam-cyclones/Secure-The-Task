@@ -13,7 +13,7 @@ test("renders a card", () => {
     description: "do a thing",
     dueDate: "2 days",
     id: "1234",
-    priority: "1",
+    priority: "_1",
   };
   render(
     <UserProvider>
