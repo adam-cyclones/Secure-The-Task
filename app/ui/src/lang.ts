@@ -16,4 +16,7 @@ export const en: UIText = {
   taskPriorityLevel0: "Low",
   taskPriorityLevel1: "Medium",
   taskPriorityLevel2: "High",
+  tasksLoadingMessage: "Loading...",
+  noTasksMessage:
+    "Congratulations you have no tasks, but theres always something todo!",
 };
