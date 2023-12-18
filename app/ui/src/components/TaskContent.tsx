@@ -1,6 +1,7 @@
 import { ListGroup } from "react-bootstrap";
 import type { Task } from "../types/App.types";
 import TaskCardItem from "./TaskCardItem";
+import { useUiText } from "../hooks/uiText";
 
 interface TaskContentProps {
   /**
@@ -10,10 +11,12 @@ interface TaskContentProps {
 }
 
 function TaskContent({ tasks }: TaskContentProps) {
+  const uiText = useUiText();
   return (
     <>
       <main>
         <ListGroup variant="flush">
+          {!tasks.length ? uiText.tasksLoadingMessage : ""}
           {tasks.map((task) => (
             <TaskCardItem key={task.id} task={task} />
           ))}
