@@ -1,280 +1,317 @@
 {
-  "info": {
-    "name": "SecureTheTask API",
-    "description": {
-      "content": "API for SecureTheTask, a full-stack task management application.",
-      "type": "text/markdown"
-    },
-    "version": "1.0.0",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "default",
-      "item": [
-        {
-          "name": "/authenticate",
-          "description": "",
-          "item": [
-            {
-              "name": "Authenticate a user",
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "disabled": false
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "disabled": false
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n \"username\": \"<string>\",\n \"password\": \"<string>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{baseUrl}}/authenticate",
-                  "host": ["{{baseUrl}}"],
-                  "path": ["authenticate"],
-                  "variable": [],
-                  "query": []
-                },
-                "description": ""
-              }
-            }
-          ]
-        },
-        {
-          "name": "/tasks",
-          "description": "",
-          "item": [
-            {
-              "name": "Retrieve a list of tasks",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "disabled": false
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{baseUrl}}/tasks",
-                  "host": ["{{baseUrl}}"],
-                  "path": ["tasks"],
-                  "variable": [],
-                  "query": [
-                    {
-                      "key": "search",
-                      "value": "search_example"
-                    },
-                    {
-                      "key": "status",
-                      "value": "status_example"
-                    },
-                    {
-                      "key": "priority",
-                      "value": "priority_example"
-                    },
-                    {
-                      "key": "page",
-                      "value": "56"
-                    },
-                    {
-                      "key": "limit",
-                      "value": "56"
-                    }
-                  ]
-                },
-                "description": ""
-              }
-            }
-          ]
-        },
-        {
-          "name": "/tasks",
-          "description": "",
-          "item": [
-            {
-              "name": "Create a new task",
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "disabled": false
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n \"id\": \"<string>\",\n \"title\": \"<string>\",\n \"description\": \"<string>\",\n \"status\": \"<string>\",\n \"priority\": \"<string>\",\n \"dueDate\": \"<string>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{baseUrl}}/tasks",
-                  "host": ["{{baseUrl}}"],
-                  "path": ["tasks"],
-                  "variable": [],
-                  "query": []
-                },
-                "description": ""
-              }
-            }
-          ]
-        },
-        {
-          "name": "/tasks/:taskId",
-          "description": "",
-          "item": [
-            {
-              "name": "Delete a task",
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{baseUrl}}/tasks/:taskId",
-                  "host": ["{{baseUrl}}"],
-                  "path": ["tasks", ":taskId"],
-                  "variable": [
-                    {
-                      "key": "taskId",
-                      "value": "",
-                      "description": ""
-                    }
-                  ],
-                  "query": []
-                },
-                "description": ""
-              }
-            }
-          ]
-        },
-        {
-          "name": "/tasks/:taskId",
-          "description": "",
-          "item": [
-            {
-              "name": "Retrieve a task by its ID",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "disabled": false
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{baseUrl}}/tasks/:taskId",
-                  "host": ["{{baseUrl}}"],
-                  "path": ["tasks", ":taskId"],
-                  "variable": [
-                    {
-                      "key": "taskId",
-                      "value": "",
-                      "description": ""
-                    }
-                  ],
-                  "query": []
-                },
-                "description": ""
-              }
-            }
-          ]
-        },
-        {
-          "name": "/tasks/:taskId",
-          "description": "",
-          "item": [
-            {
-              "name": "Update an existing task",
-              "request": {
-                "method": "PUT",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "disabled": false
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n \"id\": \"<string>\",\n \"title\": \"<string>\",\n \"description\": \"<string>\",\n \"status\": \"<string>\",\n \"priority\": \"<string>\",\n \"dueDate\": \"<string>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{baseUrl}}/tasks/:taskId",
-                  "host": ["{{baseUrl}}"],
-                  "path": ["tasks", ":taskId"],
-                  "variable": [
-                    {
-                      "key": "taskId",
-                      "value": "",
-                      "description": ""
-                    }
-                  ],
-                  "query": []
-                },
-                "description": ""
-              }
-            }
-          ]
+	"info": {
+		"name": "SecureTheTask API",
+		"description": {
+		    "content": "API for SecureTheTask, a full-stack task management application.",
+		    "type": "text/markdown"
+		},
+		"version": "1.0.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "default",
+	            "item": [
+	                        {
+    "name": "/authenticate",
+                "description": "",
+                 "item": [
+                            {
+                                "name": "Authenticate a user",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"username\": \"<string>\",\n \"password\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/authenticate",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "authenticate"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": ""
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/tasks",
+                "description": "",
+                 "item": [
+                            {
+                                "name": "Retrieve a list of tasks",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/tasks",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "tasks"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "search",
+                                                "value": "search_example"
+                                            },
+                                            {
+                                                "key": "status",
+                                                "value": "status_example"
+                                            },
+                                            {
+                                                "key": "priority",
+                                                "value": "priority_example"
+                                            },
+                                            {
+                                                "key": "page",
+                                                "value": "56"
+                                            },
+                                            {
+                                                "key": "limit",
+                                                "value": "56"
+                                            }
+                                        ]
+                                    },
+                                    "description": ""
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/tasks",
+                "description": "",
+                 "item": [
+                            {
+                                "name": "Create a new task",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"id\": \"<string>\",\n \"title\": \"<string>\",\n \"description\": \"<string>\",\n \"status\": \"<string>\",\n \"priority\": \"<string>\",\n \"dueDate\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/tasks",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "tasks"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": ""
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/tasks/:taskId",
+                "description": "",
+                 "item": [
+                            {
+                                "name": "Delete a task",
+                                "request": {
+                                    "method": "DELETE",
+                                    "header": [
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/tasks/:taskId",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "tasks",
+                                            ":taskId"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "taskId",
+                                                "value": "",
+                                                "description": ""
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": ""
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/tasks/:taskId",
+                "description": "",
+                 "item": [
+                            {
+                                "name": "Retrieve a task by its ID",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/tasks/:taskId",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "tasks",
+                                            ":taskId"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "taskId",
+                                                "value": "",
+                                                "description": ""
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": ""
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/tasks/:taskId",
+                "description": "",
+                 "item": [
+                            {
+                                "name": "Update an existing task",
+                                "request": {
+                                    "method": "PUT",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"id\": \"<string>\",\n \"title\": \"<string>\",\n \"description\": \"<string>\",\n \"status\": \"<string>\",\n \"priority\": \"<string>\",\n \"dueDate\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/tasks/:taskId",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "tasks",
+                                            ":taskId"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "taskId",
+                                                "value": "",
+                                                "description": ""
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": ""
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://securetasklist.local:3000/api",
+			"type": "string"
         }
-      ]
-    }
-  ],
-
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "https://securetasklist.local:3000/api",
-      "type": "string"
-    }
-  ]
+	]
 }
+
