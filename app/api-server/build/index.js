@@ -1,16 +1,13 @@
-import express from "express";
-import { readFile } from "fs/promises";
-import https from "https";
-import { resolve } from "path";
-import configuration from "./configuration.js";
-import v1 from "./v1API.js";
-import helmet from "helmet";
-// TODO: define and conenct up routes to API Layer - I need to change the API layer to point to AWS
-// import { DefaultApi } from "./generated/api"
-// const apiLayer = new DefaultApi();
-// AND THEN TODO: use newman to run postman tests in node.
-const { DEFAULT_CERTS_BASENAME, DEFAULT_HOSTNAME, DEFAULT_PORT } =
-  configuration;
+"use strict";
+const express = require("express");
+const { readFile } = require("fs/promises");
+const https = require("https");
+const http = require("http");
+const { resolve } = require("path");
+const configuration = require("./configuration.js");
+const { ListenOptions } = require("net");
+const v1 = require("./v1API.js");
+const helmet = require("helmet");
 const app = express();
 // ensure PORT env var override is a number at all times
 const port = parseInt(process.env.PORT || "") || DEFAULT_PORT;
