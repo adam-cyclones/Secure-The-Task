@@ -1,7 +1,7 @@
 {
   "name": "secure-the-task-ui-server",
   "version": "1.0.0",
-  "description": "Hosts the react app and forwards requests to api-server",
+  "description": "Designed for production, this hosts the react app build and proxies requests to api-server",
   "main": "src/index",
   "dependencies": {
     "express": "4.18.2",

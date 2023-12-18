@@ -2,6 +2,23 @@
 
 👋 Hi, welcome, and thanks for coming along!
 
+- [Secure The Task](#secure-the-task)
+  - [VERY Important Notice!](#very-important-notice)
+  - [API](#api)
+  - [Quick Workspace Overview](#quick-workspace-overview)
+    - [Prod vs Dev](#prod-vs-dev)
+    - [Environment Variables (CRA)](#environment-variables-cra)
+    - [Ports, Dependents and Environment usage](#ports-dependents-and-environment-usage)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+  - [Installation](#installation-1)
+    - [Clone from repo](#clone-from-repo)
+    - [Install Node Dependencies](#install-node-dependencies)
+    - [Prep your machine hosts](#prep-your-machine-hosts)
+    - [Create Certs](#create-certs)
+  - [Start the Project](#start-the-project)
+    - [Development](#development)
+
 ## VERY Important Notice!
 
 I have kept an extensive Devlog in [Notion](https://www.notion.so/) with all of my notes, thoughts, decision making and more, keeping this readme more focused. (I have needed to work privately but also share this with you publicly, There may be a need to sign-up. for the Notion published Devlog, I kindly request that you do so to understand my process)
@@ -23,13 +40,13 @@ Secure the task is a mono-repo with [workspaces](https://docs.npmjs.com/cli/v7/u
 
 ![Untitled](./docs/charts/prod-vs-dev.png)
 
-In development I use the provided CRA development server, but as CRA is now unsupported. I have learned that this has worked out well, in real life, this would be the time to consider upgrading to Vite.
+I use the provided Create React App (CRA) server in development only, however, CRA is now unsupported by its maintainers. Although the use of CRA works great, In real life, this would be the time to consider upgrading to Vite.
 
-I setup a separate UI server that would run for production builds and call the API.
+In production, I have setup it's own isolated UI server that would run for production builds and call the API - this piece was never fully finished, you should read about my AWS problems in the Devlog to find out why.
 
-In development you can't use the production API server, instead, we would call the mock-server directly from the UI development server. I realise that this is a step away from production but the point is to get the data now how, this gives us better up-time as we won't need to worry about bad data.
+In development you can't use the production API server, instead, we would call the mock-server directly from the UI development server. I realize that this is a step away from production but the point is to get the data into the UI development early, this gives us better up-time as a developer as we won't need to worry about bad data or backend changes, an update to the openapi.yml is an update to the API, and the mock-server.
 
-Aside from this, we have Newman (Postman) tests for validating that the production API server is implemented correctly, this can equally use the mock server for its responses rather than AWS.
+Aside from this, we have Newman (Postman) tests for validating that the production API server is implemented correctly, this can equally use the mock server for its responses rather than AWS and it is what I ended up doing to sidestep the AWS Mongo difficulties.
 
 ### Environment Variables (CRA)
 
@@ -66,7 +83,7 @@ To make things simple, prod and their equivalent development counterparts run o
 - [mkcert](https://formulae.brew.sh/formula/mkcert#default): `brew install mkcert` we need this for making a TLS Certificate and Private Key. For HTTPS, you will need a TLS certificate and a private key, instructions to follow. For development purposes, you can generate a self-signed certificate. For production, you should obtain a certificate from a trusted Certificate Authority (CA).
 - [Git](https://git-scm.com/) (for development): If you plan to manage your project with version control (highly recommended).
 - Text Editor or IDE (for development): A text editor like Visual Studio Code, Sublime Text, or an Integrated Development Environment (IDE) like WebStorm for writing your code.
-- [prettier](https://prettier.io/) (for development): idealy code formatting would be hocked up by commits but presently it's ran manually and periodically, a future action would be to hook this up to autosave or on commit.
+- [prettier](https://prettier.io/) (for development): ideally code formatting would be hocked up by commits but presently, it runs manually and periodically, a future action would be to hook this up to autosave or on commit.
 
 ## Installation
 
