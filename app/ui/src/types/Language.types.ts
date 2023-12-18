@@ -17,4 +17,6 @@ export interface UIText {
   taskPriorityLevel0: string;
   taskPriorityLevel1: string;
   taskPriorityLevel2: string;
+  noTasksMessage: string;
+  tasksLoadingMessage: string;
 }
